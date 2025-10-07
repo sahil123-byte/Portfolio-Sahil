@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio of Nishant Kumar Gupta, an aspiring Computer Science Engineer">
+    <title>Md Sahil | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .skills-section {
+  width: 80%;
+  margin: auto;
+  color: #fff;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+}
+
+.skill-bar {
+  margin: 1px 0;
+}
+
+p {
+  margin: 2;
+}
+
+.progress {
+  background-color: #333;
+  border-radius: 20px;
+  position: relative;
+  margin: 5px 0;
+  height: 25px;
+  width: 50%;
+}
+
+.progress-done {
+  background: linear-gradient(to left, #00f260, #0575e6);
+  box-shadow: 0 3px 3px -5px #00f260, 0 2px 5px #0575e6;
+  border-radius: 20px;
+  color: #000000;
+  height: 100%;
+  width: 0;
+  opacity: 0;
+  transition: 1s ease 0.3s;
+}
+
+.circular-skills {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(#0575e6 calc(var(--percent) * 1%), #333 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.inner-circle {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.circle p {
+  position: absolute;
+  bottom: -30px;
+  text-align: center;
+  padding: 30%;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #121212;
+            color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1c2526;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .preloader-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #00d4ff;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #00d4ff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #f5f5f5;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff6f61;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            color: #00d4ff;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .nav-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .nav-menu.active {
+            transform: translateX(0);
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, #1c2526, #121212);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #00d4ff, #1e90ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #a0b0b0;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(45deg, #00d4ff, #1e90ff);
+            color: #121212;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Hero Image */
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #00d4ff;
+            z-index: 1;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* About Section */
+        #about {
+            background: #1c2526;
+        }
+
+        .about-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #00d4ff;
+            font-weight: 800;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            background: #121212;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Education Section */
+        #education {
+            background: #121212;
+        }
+
+        .education-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .education-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #00d4ff;
+            font-weight: 800;
+        }
+
+        .education-item {
+            background: #1c2526;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .education-item h3 {
+            font-size: 1.5rem;
+            color: #00d4ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item p {
+            color: #a0b0b0;
+            margin-bottom: 0.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Certifications Section */
+        #certifications {
+            background: #1c2526;
+        }
+
+        .certifications-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .certifications-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #00d4ff;
+            font-weight: 800;
+        }
+
+        .certification-item {
+            background: #121212;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .certification-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .certification-item h3 {
+            font-size: 1.5rem;
+            color: #00d4ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .certification-item p {
+            color: #a0b0b0;
+            margin-bottom: 0.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Projects Section */
+        #projects {
+            background: #121212;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+        }
+
+        .project-card {
+            background: #1c2526;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-card-content {
+            padding: 1.5rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            color: #00d4ff;
+        }
+
+        .project-card p {
+            color: #a0b0b0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #1c2526, #121212);
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-links a {
+            color: #f5f5f5;
+            font-size: 1.5rem;
+            font-family: 'Inter', sans-serif;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: #ff6f61;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: #1c2526;
+            text-align: center;
+            padding: 1rem 0;
+            color: #a0b0b0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: row;
+                align-items: center;
+                position: relative;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                width: 70%;
+                background: rgba(18, 18, 18, 0.95);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transform: translateX(100%);
+                z-index: 1000;
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+
+            nav ul li {
+                margin: 1rem 0;
+            }
+
+            nav ul a {
+                font-size: 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            .hero-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .cta-button {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .about-content h2, .education-content h2, .certifications-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+
+            .education-item h3, .certification-item h3 {
+                font-size: 1.2rem;
+            }
+
+            .education-item p, .certification-item p {
+                font-size: 0.9rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-links a {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+            nav {
+                flex-direction: row;
+                align-items: center;
+                position: relative;
+            }
+          
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                width: 60%;
+                background: rgba(18, 18, 18, 0.95);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transform: translateX(100%);
+                z-index: 1000;
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+
+            nav ul li {
+                margin: 1rem 0;
+            }
+
+            nav ul a {
+                font-size: 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .about-content h2, .education-content h2, .certifications-content h2 {
+                font-size: 2rem;
+            }
+
+            .education-item h3, .certification-item h3 {
+                font-size: 1.3rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero-image {
+                width: 180px;
+                height: 180px;
+            }
+
+            .about-content h2, .education-content h2, .certifications-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .education-item h3, .certification-item h3 {
+                font-size: 1.4rem;
+            }
+
+            .project-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (min-width: 1201px) {
+            nav {
+                max-width: 1400px;
+            }
+
+            .hero-content h1 {
+                font-size: 4.5rem;
+            }
+
+            .hero-image {
+                width: 220px;
+                height: 220px;
+            }
+            .project-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <div class="preloader-logo">MD SAHIL</div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">MD SAHIL</div>
+            <div class="hamburger" aria-label="Toggle navigation">☰</div>
+            <ul class="nav-menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Hey, I'm MD SAHIL</h1>
+            <p>Aspiring Computer Science Engineer | Building User-Friendly Web & Mern Stack Developer</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+            <div class="hero-image">
+                <img src="pic.jpeg" alt="MS SAHIL  Portrait" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>I'm a B.Tech Computer Science student at Technocrats institute of technology (Excellence), Bhopal, passionate about creating user-friendly web and Android applications. With foundational skills in programming and a drive to learn, I enjoy building projects that solve real-world problems. I’m fluent in Hindi and English and proficient in innovation.</p>
+            <a href="resuma.pdf" download class="cta-button resume-button" style="margin-top: 1rem;">Download Resume</a>
+            <div class="skills-grid">
+                <div class="skill-item">HTML</div>
+                <div class="skill-item">CSS</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">React</div>
+                <div class="skill-item">Java</div>
+                <div class="skill-item">Python</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="education-content">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>B.Tech in Computer Science</h3>
+                <p>TIT Excellence(RGPV), Bhopal</p>
+                <p>2025 - Present</p>
+                <p>CGPA: 7.63</p>
+            </div>
+            <div class="education-item">
+                <h3>12th (BSEB)</h3>
+                <p>PC College, Buxar</p>
+                <p>2022</p>
+                <p>Percentage: 74.6%</p>
+            </div>
+            <div class="education-item">
+                <h3>10th (CBSE)</h3>
+                <p>Saraswati Vidya Mandir, Buxar</p>
+                <p>2020</p>
+                <p>Percentage: 62%</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <div class="certifications-content">
+            <h2>Certifications</h2>
+            <div class="certification-item">
+                <h3>Placeholder Certification</h3>
+                <p>Online Platform (e.g., IBM, Codechef Hackathon)</p>
+                <p>Year</p>
+                <p>Completed a course in [Topic:- e.g., Web Development & Java].</p>
+            </div>
+        </div>
+    </section>
+    <section id="Skills">
+        <div class="skills-section">
+            <h2>Technical Skills</h2>
+            <div class="skill-bar">
+                <p>HTML</p>
+                <div class="progress">
+                    <div class="progress-done" data-done="90"></div>
+                </div>
+            </div>
+        
+            <div class="skill-bar">
+                <p>CSS</p>
+                <div class="progress">
+                    <div class="progress-done" data-done="60"></div>
+                </div>
+            </div>
+        
+            <div class="skill-bar">
+                <p>Javascript</p>
+                <div class="progress">
+                    <div class="progress-done" data-done="85"></div>
+                </div>
+            </div>
+        <div class="skill-bar">
+                <p>HTML</p>
+                <div class="progress">
+                    <div class="progress-done" data-done="90"></div>
+                </div>
+            </div>
+
+            <div class="skill-bar">
+                <p>Java</p>
+                <div class="progress">
+                    <div class="progress-done" data-done="50"></div>
+                </div>
+            </div>
+        
+            <div class="skill-bar">
+                <p>Python</p>
+                <div class="progress">
+                    <div class="progress-done" data-done="75"></div>
+                </div>
+            </div>
+        
+            <h2>Professional Skills</h2>
+            <div class="circular-skills">
+                <div class="circle" data-percent="75">
+                    <div class="inner-circle">75%</div>
+                    <p>Creativity</p>
+                </div>
+        
+                <div class="circle" data-percent="80">
+                    <div class="inner-circle">80%</div>
+                    <p>Communication</p>
+                </div>
+        
+                <div class="circle" data-percent="75">
+                    <div class="inner-circle">85%</div>
+                    <p>Problem Solving</p>
+                </div>
+        
+                <div class="circle" data-percent="85">
+                    <div class="inner-circle">85%</div>
+                    <p>Teamwork</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div>
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                     <h3><a href="index1.html" class="details-link" >Game</a>
+                    <div class="project-card-content">
+                        
+                        <p>A simple enjoyng tic tac game.</p>
+                    </div></h3>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Personal Portfolio" loading="lazy">
+                    <div class="project-card-content">
+                        <h3>Personal Portfolio</h3>
+                        <p>This website! A responsive portfolio built with HTML, CSS, JavaScript, and GSAP animations.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div>
+            <h2>Contact Me</h2>
+            <p>Let's create something amazing together! </p>
+            <div class="contact-links">
+                <a href="mailto:mdsahil.bxr@gmail.com">Email</a>
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>©️ 2027 MD SAHIL. Built with Passion.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            gsap.to('#preloader', {
+                opacity: 0,
+                duration: 1,
+                onComplete: () => {
+                    document.getElementById('preloader').style.display = 'none';
+                }
+            });
+        });
+
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            if (navMenu.classList.contains('active')) {
+                gsap.from('.nav-menu a', {
+                    opacity: 0,
+                    y: 20,
+                    duration: 0.5,
+                    stagger: 0.1
+                });
+            }
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.textContent = '☰';
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero section animation
+        gsap.from(".hero-content h1", {
+            opacity: 0,
+            y: 100,
+            filter: 'blur(10px)',
+            duration: 1.2,
+            ease: 'power3.out',
+            delay: 0.5
+        });
+
+        gsap.from(".hero-content p", {
+            opacity: 0,
+            y: 50,
+            filter: 'blur(5px)',
+            duration: 1,
+            ease: 'power3.out',
+            delay: 0.7
+        });
+
+        gsap.from(".cta-button", {
+            opacity: 0,
+            scale: 0.8,
+            duration: 1,
+            ease: 'back.out(1.7)',
+            delay: 0.9
+        });
+
+        // Hero image parallax and hover
+        gsap.to(".hero-image", {
+            scrollTrigger: {
+                trigger: "#hero",
+                start: "top top",
+                end: "bottom top",
+                scrub: 1
+            },
+            yPercent: 20,
+            rotate: 5,
+            ease: 'power1.out'
+        });
+
+        gsap.from(".hero-image", {
+            opacity: 0,
+            scale: 0.5,
+            duration: 1,
+            ease: 'power3.out',
+            delay: 0.3
+        });
+
+        // About section animation
+        gsap.from(".about-content h2", {
+            scrollTrigger: "#about",
+            opacity: 0,
+            x: -100,
+            filter: 'blur(5px)',
+            duration: 1,
+            ease: 'power3.out'
+        });
+
+        gsap.from(".about-content p", {
+            scrollTrigger: "#about",
+            opacity: 0,
+            y: 50,
+            filter: 'blur(5px)',
+            duration: 1,
+            ease: 'power3.out',
+            delay: 0.2
+        });
+
+        gsap.from(".skill-item", {
+            scrollTrigger: ".skills-grid",
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.8,
+            ease: 'back.out(1.7)',
+            stagger: 0.2
+        });
+
+        gsap.from(".resume-button", {
+            scrollTrigger: ".about-content",
+            opacity: 0,
+            rotation: 360,
+            duration: 1,
+            ease: 'power3.out',
+            delay: 0.4
+        });
+
+    
+        // Certifications section animation
+        gsap.from(".certifications-content h2", {
+            scrollTrigger: "#certifications",
+            opacity: 0,
+            x: -100,
+            filter: 'blur(5px)',
+            duration: 1,
+            ease: 'power3.out'
+        });
+
+        gsap.from(".certification-item", {
+            scrollTrigger: ".certifications-content",
+            opacity: 0,
+            x: (i) => i % 2 === 0 ? -50 : 50,
+            duration: 1,
+            ease: 'power3.out',
+            stagger: 0.3
+        });
+
+        // Project cards animation
+        gsap.from(".project-card",{
+            scrollTrigger: ".project-grid",
+            opacity: 0,
+            y: 100,
+            rotation: 5,
+            duration: 1,
+            ease: 'power3.out',
+            stagger: 0.2
+        });
+
+        // Contact section animation
+        gsap.from("#contact h2, #contact p", {
+            scrollTrigger: "#contact",
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: 'power3.out'
+        });
+
+        gsap.from(".contact-links a", {
+            scrollTrigger: ".contact-links",
+            opacity: 0,
+            y: 20,
+            duration: 0.8,
+            ease: 'power3.out',
+            stagger: 0.2
+        });
+
+        // Dynamic footer year
+        document.querySelector('footer p').textContent = `©️ ${new Date().getFullYear()} Nishant Kumar Gupta. Built with Passion.`;
+
+        // Optimize animations for mobile
+        if (window.innerWidth <= 768) {
+            gsap.set(".hero-image, .skill-item, .project-card", { clearProps: "all" });
+            gsap.from(".hero-image, .skill-item, .project-card", {
+                opacity: 0,
+                y: 50,
+                duration: 0.8,
+                stagger: 0.1
+            });
+        }
+        // Animate progress bars
+const progressBars = document.querySelectorAll('.progress-done');
+
+progressBars.forEach(bar => {
+    setTimeout(() => {
+        bar.style.width = bar.getAttribute('data-done') + '%';
+        bar.style.opacity = 1;
+    }, 500);
+});
+
+// Animate circular skills
+const circles = document.querySelectorAll('.circle');
+
+circles.forEach(circle => {
+    let percent = circle.getAttribute('data-percent');
+    circle.style.setProperty('--percent', percent);
+});
+    </script>
+</body>
+</html>
